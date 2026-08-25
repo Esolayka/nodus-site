@@ -1,0 +1,16 @@
+{
+  "name": "Nodus",
+  "short_name": "Nodus",
+  "description": "Связанные Markdown-заметки, граф знаний и визуальные холсты.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0b0b0c",
+  "icons": [
+    {
+      "src": "assets/nodus-logo.webp",
+      "sizes": "256x256",
+      "type": "image/webp"
+    }
+  ]
+}

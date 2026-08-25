@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b0c" />
+    <meta
+      name="description"
+      content="Nodus: приложение для заметок, связанных идей, графов и визуальных холстов."
+    />
+    <meta property="og:title" content="Nodus: соединяйте мысли" />
+    <meta
+      property="og:description"
+      content="Пишите, связывайте и исследуйте заметки в Nodus."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/nodus-logo.webp" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Nodus: соединяйте мысли</title>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0; overflow: hidden" aria-hidden="true" focusable="false">
+      <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="3" y="16" width="6" height="6" rx="1"/><rect x="15" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/></symbol>
+      <symbol id="i-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-git-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="4" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="20" r="2"/><path d="M6 6v12M18 8a6 6 0 0 1-6 6H6"/></symbol>
+      <symbol id="i-refresh-cw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-15.2-6.5L3 8"/><path d="M3 3v5h5M3 12a9 9 0 0 0 15.2 6.5L21 16"/><path d="M21 21v-5h-5"/></symbol>
+      <symbol id="i-hard-drive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h.01M11 15h2"/></symbol>
+      <symbol id="i-user-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M17 8l5 5M22 8l-5 5"/></symbol>
+      <symbol id="i-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></symbol>
+      <symbol id="i-sticky-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11l5-5V5a2 2 0 0 0-2-2Z"/><path d="M16 21v-5h5"/></symbol>
+      <symbol id="i-mouse-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.1 17 2.5-7.4L20 10.1Z"/><path d="m13 13 6 6"/></symbol>
+      <symbol id="i-undo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+      <symbol id="i-redo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></symbol>
+      <symbol id="i-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a4 4 0 0 0-4-4H2Z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a4 4 0 0 1 4-4h6Z"/></symbol>
+      <symbol id="i-circle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.84a9.6 9.6 0 0 1 2.5.34c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
+      <symbol id="i-windows" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8.25v8.25H3V3Zm9.75 0H21v8.25h-8.25V3ZM3 12.75h8.25V21H3v-8.25Zm9.75 0H21V21h-8.25v-8.25Z"/></symbol>
+      <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M14.94 5.19A4.38 4.38 0 0 0 16 2a4.44 4.44 0 0 0-3 1.52 4.17 4.17 0 0 0-1 3.09 3.69 3.69 0 0 0 2.94-1.42Zm2.52 7.44a4.51 4.51 0 0 1 2.16-3.81 4.66 4.66 0 0 0-3.66-2c-1.56-.16-3 .91-3.83.91s-2-.89-3.3-.87a4.92 4.92 0 0 0-4.14 2.53C2.93 12.45 4.24 17 6 19.47 6.8 20.68 7.8 22.05 9.12 22s1.75-.82 3.28-.82 2 .82 3.3.79 2.22-1.24 3.06-2.45a11 11 0 0 0 1.38-2.85 4.41 4.41 0 0 1-2.68-4.04Z"/></symbol>
+      <symbol id="i-linux" viewBox="0 0 24 24"><path fill="currentColor" d="M19.7 17.6c-.1-.2-.2-.4-.2-.6 0-.4-.2-.7-.5-1-.1-.1-.3-.2-.4-.2.6-1.8-.3-3.6-1.3-4.9-.8-1.2-2-2.1-1.9-3.7 0-1.9.2-5.4-3.3-5.1-3.6.2-2.6 3.9-2.7 5.2 0 1.1-.5 2.2-1.3 3.1-.2.2-.4.5-.5.7-1 1.2-1.5 2.8-1.5 4.3-.2.2-.4.4-.5.6-.1.1-.2.2-.2.3-.1.1-.3.2-.5.3-.4.1-.7.3-.9.7-.1.3-.2.7-.1 1.1.1.2.1.4 0 .7-.2.4-.2.9 0 1.4.3.4.8.5 1.5.6.5 0 1.1.2 1.6.4.5.3 1.1.5 1.7.5.3 0 .7-.1 1-.2.3-.2.5-.4.6-.7.4 0 1-.2 1.7-.2.6 0 1.2.2 2 .1 0 .1 0 .2.1.3.2.5.7.9 1.3 1h.2c.8-.1 1.6-.5 2.1-1.1.4-.4.9-.7 1.4-.9.6-.3 1-.5 1.1-1 .1-.7-.1-1.1-.5-1.7zM12.8 4.8c.6.1 1.1.6 1 1.2 0 .3-.1.6-.3.9h-.1c-.2-.1-.3-.1-.4-.2.1-.1.1-.3.2-.5 0-.4-.2-.7-.4-.7-.3 0-.5.3-.5.7v.1c-.1-.1-.3-.1-.4-.2V6c-.1-.5.3-1.1.9-1.2zm-.3 2c.1.1.3.2.4.2.1 0 .3.1.4.2.2.1.4.2.4.5s-.3.6-.9.8c-.2.1-.3.1-.4.2-.3.2-.6.3-1 .3-.3 0-.6-.2-.8-.4-.1-.1-.2-.2-.4-.3-.1-.1-.3-.3-.4-.6 0-.1.1-.2.2-.3.3-.2.4-.3.5-.4l.1-.1c.2-.3.6-.5 1-.5.3.1.6.2.9.4zM10.4 5c.4 0 .7.4.8 1.1v.2c-.1 0-.3.1-.4.2v-.2c0-.3-.2-.6-.4-.5-.2 0-.3.3-.3.6 0 .2.1.3.2.4 0 0-.1.1-.2.1-.2-.2-.4-.5-.4-.8 0-.6.3-1.1.7-1.1zm-1 16.1c-.7.3-1.6.2-2.2-.2-.6-.3-1.1-.4-1.8-.4-.5-.1-1-.1-1.1-.3-.1-.2-.1-.5.1-1 .1-.3.1-.6 0-.9-.1-.3-.1-.5 0-.8.1-.3.3-.4.6-.5.3-.1.5-.2.7-.4.1-.1.2-.2.3-.4.3-.4.5-.6.8-.6.6.1 1.1 1 1.5 1.9.2.3.4.7.7 1 .4.5.9 1.2.9 1.6 0 .5-.2.8-.5 1zm4.9-2.2c0 .1 0 .1-.1.2-1.2.9-2.8 1-4.1.3l-.6-.9c.9-.1.7-1.3-1.2-2.5-2-1.3-.6-3.7.1-4.8.1-.1.1 0-.3.8-.3.6-.9 2.1-.1 3.2 0-.8.2-1.6.5-2.4.7-1.3 1.2-2.8 1.5-4.3.1.1.1.1.2.1.1.1.2.2.3.2.2.3.6.4.9.4h.1c.4 0 .8-.1 1.1-.4.1-.1.2-.2.4-.2.3-.1.6-.3.9-.6.4 1.3.8 2.5 1.4 3.6.4.8.7 1.6.9 2.5.3 0 .7.1 1 .3.8.4 1.1.7 1 1.2H18c0-.3-.2-.6-.9-.9-.7-.3-1.3-.3-1.5.4-.1 0-.2.1-.3.1-.8.4-.8 1.5-.9 2.6.1.4 0 .7-.1 1.1zm4.6.6c-.6.2-1.1.6-1.5 1.1-.4.6-1.1 1-1.9.9-.4 0-.8-.3-.9-.7-.1-.6-.1-1.2.2-1.8.1-.4.2-.7.3-1.1.1-1.2.1-1.9.6-2.2 0 .5.3.8.7 1 .5 0 1-.1 1.4-.5h.2c.3 0 .5 0 .7.2.2.2.3.5.3.7 0 .3.2.6.3.9.5.5.5.8.5.9-.1.2-.5.4-.9.6zm-9-12c-.1 0-.1 0-.1.1 0 0 0 .1.1.1s.1.1.1.1c.3.4.8.6 1.4.7.5-.1 1-.2 1.5-.6l.6-.3c.1 0 .1-.1.1-.1 0-.1 0-.1-.1-.1-.2.1-.5.2-.7.3-.4.3-.9.5-1.4.5-.5 0-.9-.3-1.2-.6-.1 0-.2-.1-.3-.1z"/></symbol>
+    </svg>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav shell" aria-label="Основная навигация">
+        <a class="brand" href="#top" aria-label="Nodus, на главную">
+          <img src="assets/nodus-logo.webp" width="36" height="36" alt="" />
+          <span>Nodus</span>
+        </a>
+
+        <div class="nav-links" data-nav-links>
+          <a href="#features">Возможности</a>
+          <a href="#workspace">Интерфейс</a>
+          <a href="#faq">Вопросы</a>
+          <a class="nav-menu-download" href="#download">Скачать</a>
+        </div>
+
+        <div class="nav-actions">
+          <a
+            class="icon-link"
+            href="https://github.com/Esolayka/Nodus"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Nodus на GitHub"
+          >
+            <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+          </a>
+          <a class="button button-small button-light nav-download" href="#download">Скачать</a>
+          <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-toggle>
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top">
+        <div class="hero-copy reveal">
+          <h1>Соединяйте<br /><span>мысли.</span></h1>
+          <p class="hero-lead">
+            Приложение для заметок, исследований и личной базы знаний.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light button-primary" href="#download" data-primary-download>
+              <span data-download-label>Скачать Nodus</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" />
+              </svg>
+            </a>
+            <a class="button button-ghost" href="#features">
+              Возможности
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="product-shot-frame">
+            <img
+              class="hero-product-shot"
+              src="assets/nodus-workspace.png"
+              width="1600"
+              height="900"
+              alt="Интерфейс Nodus с деревом заметок, открытой заметкой проекта и панелью обратных ссылок"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="features">
+        <div class="section-heading reveal">
+          <div><h2>Знания растут<br />из связей.</h2></div>
+          <p>Сохраняйте идеи, связывайте их с источниками и превращайте разрозненные записи в понятную личную систему.</p>
+        </div>
+
+        <div class="bento">
+          <article class="feature-card feature-large feature-graph reveal">
+            <div class="card-copy">
+              <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-network" /></svg></span>
+              <h3>Связывайте идеи</h3>
+              <p>Вики-ссылки, бэклинки и граф собирают связанные заметки в единую карту.</p>
+            </div>
+            <div class="feature-product-shot feature-product-shot-graph"><img src="assets/nodus-graph-card.png" width="1200" height="483" alt="Граф связей в Nodus" /></div>
+          </article>
+
+          <article class="feature-card feature-local reveal" data-delay="1">
+            <div class="card-copy">
+              <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder" /></svg></span>
+              <h3>Храните знания у себя</h3>
+              <p>Заметки хранятся обычными <code>.md</code> файлами в выбранной вами папке.</p>
+            </div>
+            <div class="feature-product-shot feature-product-shot-files"><img src="assets/nodus-files-card.png" width="700" height="500" alt="Дерево папок и Markdown-файлов в Nodus" /></div>
+          </article>
+
+          <article class="feature-card feature-canvas reveal">
+            <div class="card-copy">
+              <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-layout-grid" /></svg></span>
+              <h3>Раскладывайте мысли на холсте</h3>
+              <p>Собирайте карточки, заметки, ссылки и группы на свободном холсте.</p>
+            </div>
+            <div class="feature-product-shot feature-product-shot-canvas"><img src="assets/nodus-canvas-card.png" width="1200" height="520" alt="Свободный холст Nodus с карточками и связями" /></div>
+          </article>
+
+          <article class="feature-card feature-sync reveal" data-delay="1">
+            <div class="card-copy">
+              <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw" /></svg></span>
+              <h3>Выбирайте способ синхронизации</h3>
+              <p>Работайте локально, через Git или сервер Nodus.</p>
+            </div>
+            <div class="feature-product-shot feature-product-shot-sync"><img src="assets/nodus-sync-card.png" width="900" height="560" alt="Настройки синхронизации Nodus" /></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workspace-section" id="workspace">
+        <div class="shell">
+          <div class="section-heading compact reveal">
+            <div><h2>Три способа видеть больше.</h2></div>
+          </div>
+
+          <div class="showcase reveal">
+            <div class="showcase-tabs" role="tablist" aria-label="Режимы Nodus">
+              <button class="active" type="button" role="tab" aria-selected="true" data-showcase-tab="notes"><svg class="icon" aria-hidden="true"><use href="#i-file-text" /></svg> Заметки</button>
+              <button type="button" role="tab" aria-selected="false" data-showcase-tab="graph"><svg class="icon" aria-hidden="true"><use href="#i-network" /></svg> Граф</button>
+              <button type="button" role="tab" aria-selected="false" data-showcase-tab="canvas"><svg class="icon" aria-hidden="true"><use href="#i-layout-grid" /></svg> Холст</button>
+            </div>
+            <div class="showcase-stage">
+              <div class="showcase-panel active" role="tabpanel" data-showcase-panel="notes">
+                <div class="showcase-copy"><h3>Пишите в привычном ритме</h3><p>Работайте с заметками и возвращайтесь к прошлым версиям.</p></div>
+                <div class="showcase-product-shot showcase-product-shot-notes"><img src="assets/nodus-editor-showcase.png" width="1600" height="650" alt="Редактор заметок Nodus" /></div>
+              </div>
+
+              <div class="showcase-panel" role="tabpanel" data-showcase-panel="graph" hidden>
+                <div class="showcase-copy"><h3>Смотрите на контекст целиком</h3><p>Открывайте заметки прямо на карте связей.</p></div>
+                <div class="showcase-product-shot showcase-product-shot-graph"><img src="assets/nodus-graph-showcase.png" width="1350" height="483" alt="Интерактивный граф Nodus" /></div>
+              </div>
+
+              <div class="showcase-panel" role="tabpanel" data-showcase-panel="canvas" hidden>
+                <div class="showcase-copy"><h3>Думайте пространственно</h3><p>Собирайте ход рассуждения в свободном пространстве.</p></div>
+                <div class="showcase-product-shot showcase-product-shot-canvas"><img src="assets/nodus-canvas-showcase.png" width="1300" height="630" alt="Холст Nodus с карточками и соединениями" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell principles">
+        <div class="section-heading reveal">
+          <div><h2>Ваши знания<br />остаются вашими.</h2></div>
+          <p>Nodus работает с выбранной вами папкой и не требует переносить мысли в закрытую систему.</p>
+        </div>
+        <div class="principle-list">
+          <article class="reveal"><span class="principle-icon"><svg class="icon" aria-hidden="true"><use href="#i-user-x" /></svg></span><h3>Работайте без аккаунта</h3><p>Выберите папку и начинайте писать. Локальные заметки доступны без интернета и внешнего сервиса.</p></article>
+          <article class="reveal" data-delay="1"><span class="principle-icon"><svg class="icon" aria-hidden="true"><use href="#i-file-text" /></svg></span><h3>Оставайтесь в открытом формате</h3><p>Открывайте и редактируйте заметки другими программами. Ваш архив не зависит от судьбы Nodus.</p></article>
+          <article class="reveal" data-delay="2"><span class="principle-icon"><svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></span><h3>Проверяйте открытый код</h3><p>Nodus распространяется по AGPL-3.0. Исходники, архитектура и история изменений доступны на GitHub.</p></article>
+        </div>
+      </section>
+
+      <section class="section download-section" id="download">
+        <div class="shell">
+          <div class="download-panel reveal">
+            <div class="download-copy">
+              <h2>Скачайте Nodus.<br /><span>Начните со своей папки.</span></h2>
+              <p>Бесплатно.</p>
+              <a class="button button-dark button-primary" href="#platforms" data-primary-download>
+                <span data-download-label>Выбрать версию</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" /></svg>
+              </a>
+            </div>
+            <div class="download-orbit" aria-hidden="true">
+              <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+              <img src="assets/nodus-logo.webp" width="132" height="132" alt="" />
+            </div>
+          </div>
+
+          <div class="platform-grid" id="platforms">
+            <article class="platform-card" data-platform="windows">
+              <div class="platform-icon" aria-hidden="true"><svg class="icon"><use href="#i-windows" /></svg></div>
+              <div><h3>Windows</h3><p>Windows 10 и 11 · x64</p></div>
+              <div class="platform-actions">
+                <a href="https://github.com/Esolayka/Nodus/releases/download/v0.1.1/Nodus_0.1.1_x64-setup.exe">Скачать .exe <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></a>
+              </div>
+            </article>
+            <article class="platform-card" data-platform="macos">
+              <div class="platform-icon apple-icon" aria-hidden="true"><svg class="icon"><use href="#i-apple" /></svg></div>
+              <div><h3>macOS</h3><p>Apple Silicon · ARM64</p></div>
+              <div class="platform-actions">
+                <a href="https://github.com/Esolayka/Nodus/releases/download/v0.1.1/Nodus_0.1.1_aarch64.dmg">Скачать .dmg <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></a>
+                <small>Разрешите запуск в настройках macOS.</small>
+              </div>
+            </article>
+            <article class="platform-card" data-platform="linux">
+              <div class="platform-icon linux-icon" aria-hidden="true"><svg class="icon"><use href="#i-linux" /></svg></div>
+              <div><h3>Linux</h3><p>x86_64 · AppImage, DEB или RPM</p></div>
+              <div class="platform-actions">
+                <div class="linux-links">
+                  <a href="https://github.com/Esolayka/Nodus/releases/download/v0.1.1/Nodus_0.1.1_amd64.AppImage">AppImage <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></a>
+                  <a href="https://github.com/Esolayka/Nodus/releases/download/v0.1.1/Nodus_0.1.1_amd64.deb">DEB <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></a>
+                  <a href="https://github.com/Esolayka/Nodus/releases/download/v0.1.1/Nodus-0.1.1-1.x86_64.rpm">RPM <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg></a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="release-note"><a href="https://github.com/Esolayka/Nodus/releases/tag/v0.1.1" target="_blank" rel="noreferrer">Файлы релиза и контрольные суммы</a></p>
+        </div>
+      </section>
+
+      <section class="section shell faq-section" id="faq">
+        <div class="section-heading compact reveal">
+          <div><h2>Вопросы и ответы.</h2></div>
+        </div>
+        <div class="faq-list">
+          <details class="reveal"><summary>Где хранятся мои заметки?<span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></span></summary><p>В выбранной вами папке на компьютере. Заметки хранятся в обычных Markdown-файлах, вложения лежат рядом, а служебные данные Nodus находятся внутри самого хранилища.</p></details>
+          <details class="reveal"><summary>Нужна ли регистрация?<span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></span></summary><p>Нет. Локальная работа полностью доступна без аккаунта. Синхронизация подключается отдельно, только если она вам нужна.</p></details>
+          <details class="reveal"><summary>Можно перенести заметки из Obsidian или Notion?<span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></span></summary><p>Да. Хранилище Obsidian уже состоит из Markdown-файлов, а экспорт Notion можно преобразовать встроенным импортом. Перед большим переносом сохраните резервную копию.</p></details>
+          <details class="reveal"><summary>Можно ли доверять синхронизации?<span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></span></summary><p>Для синхронизации можно использовать Git. Серверный режим передаёт содержимое без сквозного шифрования, поэтому используйте только сервер, которому доверяете.</p></details>
+          <details class="reveal"><summary>Почему macOS показывает предупреждение?<span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg></span></summary><p>Сборка имеет ad-hoc подпись и не нотарифицирована Apple. После первой попытки запуска разрешите приложение в разделе «Конфиденциальность и безопасность».</p></details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#top"><img src="assets/nodus-logo.webp" width="40" height="40" alt="" /><span>Nodus</span></a>
+        </div>
+        <div class="footer-links">
+          <div><b>Продукт</b><a href="#features">Возможности</a><a href="#download">Скачать</a><a href="https://github.com/Esolayka/Nodus/releases">Релизы</a></div>
+          <div><b>Проект</b><a href="https://github.com/Esolayka/Nodus"><svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>GitHub</a><a href="https://github.com/Esolayka/Nodus/blob/main/README.md"><svg class="icon" aria-hidden="true"><use href="#i-book-open" /></svg>Документация</a><a href="https://github.com/Esolayka/Nodus/issues"><svg class="icon" aria-hidden="true"><use href="#i-circle-alert" /></svg>Сообщить о проблеме</a></div>
+        </div>
+      </div>
+      <div class="shell footer-bottom"><span>© 2026 Nodus</span></div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
