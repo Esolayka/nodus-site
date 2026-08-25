@@ -1,17 +1,17 @@
-const RELEASE_BASE = "https://github.com/Esolayka/Nodus/releases/download/v0.1.1";
+const RELEASE_BASE = "https://github.com/Esolayka/Nodus/releases/download/v0.2.0";
 
 const downloads = {
   windows: {
     label: "Скачать для Windows",
-    href: `${RELEASE_BASE}/Nodus_0.1.1_x64-setup.exe`,
+    href: `${RELEASE_BASE}/Nodus_0.2.0_x64-setup.exe`,
   },
   macos: {
     label: "Скачать для macOS",
-    href: `${RELEASE_BASE}/Nodus_0.1.1_aarch64.dmg`,
+    href: `${RELEASE_BASE}/Nodus_0.2.0_aarch64.dmg`,
   },
   linux: {
     label: "Скачать AppImage",
-    href: `${RELEASE_BASE}/Nodus_0.1.1_amd64.AppImage`,
+    href: `${RELEASE_BASE}/Nodus_0.2.0_amd64.AppImage`,
   },
 };
 
